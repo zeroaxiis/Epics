@@ -2,6 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
+
 // Initialize the app first
 const app = express();
 
@@ -29,7 +30,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 // Import routes
-import userRouter from './routes/user.router.js';
+// import userRouter from './routes/user.router.js';
 
 // Set up routes
 // app.use('/users', userRouter);
