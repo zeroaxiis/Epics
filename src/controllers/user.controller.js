@@ -4,7 +4,7 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { apiResponse } from "../utils/apiResponse.js";
 import { ApiError } from "../utils/apiError.js";
 import jwt from "jsonwebtoken";
-import { Subscription } from "../models/subscription.model.js";
+// import { Subscription } from "../models/subscription.model.js";
 import mongoose from "mongoose";
 
 const generateAccessAndRefreshToken = async (userId) => {
@@ -433,6 +433,6 @@ export {
     updateDetails,
     updateAvatar,
     updateCoverImage,
-    getUserChannelProfile,
-    getWatchHistory,
+    // getUserChannelProfile,
+    // getWatchHistory,
 };
