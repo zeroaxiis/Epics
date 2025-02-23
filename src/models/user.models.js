@@ -1,11 +1,10 @@
-import mongoose from 'mongoose';
-import jsonwebtoken from 'jsonwebtoken';
+import mongoose, { Schema } from "mongoose";
 import bcrypt from 'bcrypt';
+import jsonwebtoken from "jsonwebtoken";
 
-
-const userSchema = new schema(
+const userSchema = new Schema(
     {
-        username:{
+        username: {
             type: String,
             required: true,
             unique: true,
@@ -13,22 +12,29 @@ const userSchema = new schema(
             trim: true,
             index: true
         },
-        email:{
+        email: {
             type: String,
             required: true,
             unique: true,
             lowercase: true,
-            trim: true
+            trim: true,
         },
-        fullname:{
+        fullname: {
             type: String,
             required: true,
             trim: true,
-            index:true
+            index: true
         },
-        password:{
+        avatar: {
             type: String,
-            required: [true, 'Password is required']
+            required: true,
+        },
+        coverImage: {
+            type: String,
+        },
+        password: {
+            type: String,
+            required: [true, 'password is required']
         },
         refreshToken: {
             type: String
@@ -37,8 +43,7 @@ const userSchema = new schema(
     {
         timestamps: true
     }
-)
-
+);
 
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();

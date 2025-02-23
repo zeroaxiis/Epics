@@ -1,11 +1,12 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { User } from "../models/user.model.js";
+import { User } from "../models/user.models.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { apiResponse } from "../utils/apiResponse.js";
 import { ApiError } from "../utils/apiError.js";
 import jwt from "jsonwebtoken";
-// import { Subscription } from "../models/subscription.model.js";
 import mongoose from "mongoose";
+
+
 
 const generateAccessAndRefreshToken = async (userId) => {
     try {
