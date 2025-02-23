@@ -1,6 +1,6 @@
 const express = require("express");
-const Appointment = require("../models/Appointment");
-const Hospital = require("../models/Hospital");
+const Appointment = require("../models/Appointment_model");
+const Hospital = require("../models/Hospital_model");
 
 const router = express.Router();
 
