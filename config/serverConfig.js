@@ -1,8 +1,8 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
-const hospitalRoutes = require("../routes/hospitalRoutes");
-const appointmentRoutes = require("../routes/appointmentRoutes");
+import hospitalRoutes from "../routes/hospitalRoutes.js";
+import appointmentRoutes from "../routes/appointmentRoutes.js";
 
 const setupServer = () => {
   const app = express();
@@ -18,4 +18,4 @@ const setupServer = () => {
   return app;
 };
 
-module.exports = setupServer;
+export default setupServer;

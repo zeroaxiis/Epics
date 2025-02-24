@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const AppointmentSchema = new mongoose.Schema({
   patientName: String,
@@ -8,4 +8,5 @@ const AppointmentSchema = new mongoose.Schema({
   status: { type: String, default: "Pending" },
 });
 
-module.exports = mongoose.model("Appointment", AppointmentSchema);
+const Appointment = mongoose.model("Appointment", AppointmentSchema);
+export default Appointment;

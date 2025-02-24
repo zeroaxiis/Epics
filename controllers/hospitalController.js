@@ -1,7 +1,7 @@
-const Hospital = require("../models/Hospital_model");
+import Hospital from "../models/Hospital_model.js";
 
 // Get all hospitals sorted by available beds
-const getHospitals = async (req, res) => {
+export const getHospitals = async (req, res) => {
   try {
     const hospitals = await Hospital.aggregate([
       { $match: { availableBeds: { $gt: 0 } } },
@@ -13,5 +13,3 @@ const getHospitals = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
-module.exports = { getHospitals };

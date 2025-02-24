@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const HospitalSchema = new mongoose.Schema({
   name: String,
@@ -11,4 +11,5 @@ const HospitalSchema = new mongoose.Schema({
   availableBeds: Number,
 });
 
-module.exports = mongoose.model("Hospital", HospitalSchema);
+const Hospital = mongoose.model("Hospital", HospitalSchema);
+export default Hospital;

@@ -1,12 +1,12 @@
-const Appointment = require("../models/Appointment_model");
-const Hospital = require("../models/Hospital_model");
+import Appointment from "../models/Appointment_model.js";
+import Hospital from "../models/Hospital_model.js";
 
 // Book an appointment
-const bookAppointment = async (req, res) => {
+export const bookAppointment = async (req, res) => {
   try {
     const { patientName, email, phone, hospitalId } = req.body;
     const hospital = await Hospital.findById(hospitalId);
-    
+
     if (!hospital) {
       return res.status(404).json({ message: "Hospital not found." });
     }
@@ -32,11 +32,11 @@ const bookAppointment = async (req, res) => {
 };
 
 // Confirm appointment
-const confirmAppointment = async (req, res) => {
+export const confirmAppointment = async (req, res) => {
   try {
     const { appointmentId } = req.params;
     const appointment = await Appointment.findById(appointmentId);
-    
+
     if (!appointment) return res.status(404).json({ message: "Appointment not found" });
 
     if (appointment.status === "Confirmed") {
@@ -63,7 +63,7 @@ const confirmAppointment = async (req, res) => {
 };
 
 // Get user appointments
-const getUserAppointments = async (req, res) => {
+export const getUserAppointments = async (req, res) => {
   try {
     const { email } = req.params;
     const appointments = await Appointment.find({ email, status: "Confirmed" }).populate("hospitalId");
@@ -75,7 +75,7 @@ const getUserAppointments = async (req, res) => {
 };
 
 // Get all appointments
-const getAllAppointments = async (req, res) => {
+export const getAllAppointments = async (req, res) => {
   try {
     const appointments = await Appointment.find().populate("hospitalId");
     res.json(appointments);
@@ -84,5 +84,3 @@ const getAllAppointments = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
-module.exports = { bookAppointment, confirmAppointment, getUserAppointments, getAllAppointments };

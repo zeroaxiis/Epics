@@ -1,6 +1,6 @@
-require("dotenv").config();  // Load environment variables
-const connectDB = require("./config/db");
-const setupServer = require("./config/serverConfig");
+import "dotenv/config"; // Load environment variables
+import connectDB from "./config/db.js";
+import setupServer from "./config/serverConfig.js";
 
 // Connect to Database
 connectDB();
