@@ -93,7 +93,7 @@ const loginUser = asyncHandler(async (req, res) => {
         ]
     });
 
-    if (!user || !(await user.comparePassword(password))) {
+    if (!user || !(await user.isPasswordCorrect(password))) {
         throw new ApiError(401, "Invalid credentials");
     }
 
