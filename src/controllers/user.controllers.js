@@ -24,6 +24,7 @@ const generateAccessAndRefreshToken = async (userId) => {
     }
 };
 
+
 const registerUser = asyncHandler(async (req, res) => {
     const { fullname, email, username, password } = req.body;
     
@@ -78,6 +79,7 @@ const registerUser = asyncHandler(async (req, res) => {
         new apiResponse(201, createdUser, "User registered successfully.")
     );
 });
+
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, username, password } = req.body;
