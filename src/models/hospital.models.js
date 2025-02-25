@@ -1,8 +1,16 @@
 import mongoose from "mongoose";
 
 const HospitalSchema = new mongoose.Schema({
-  name: String,
-  address: String,
+  name:{
+    type: String,
+    required: true,
+    trim: true
+  },
+  address:{
+    type: String,
+    required: true,
+    trim: true,
+  },
   amenities: [String],
   rating: Number,
   no_of_reviews: Number,

@@ -1,5 +1,5 @@
-import Appointment from "../models/Appointment_model.js";
-import Hospital from "../models/Hospital_model.js";
+import Appointment from "../models/appointment.models.js";
+import Hospital from "../models/hospital.models.js";
 
 // Book an appointment
 export const bookAppointment = async (req, res) => {
