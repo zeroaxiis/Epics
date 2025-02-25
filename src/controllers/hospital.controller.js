@@ -1,4 +1,4 @@
-import Hospital from "../models/Hospital_model.js";
+import Hospital from "../models/hospital.models.js";
 
 // Get all hospitals sorted by available beds
 export const getHospitals = async (req, res) => {
