@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 
 const AppointmentSchema = new mongoose.Schema(
     {
-        patientName:{
-            type: String,
+        fullname:{
+            type: mongoose.Schema.Types.ObjectId, 
+            ref: "User",
             required: true,
             trim: true
         },
