@@ -36,5 +36,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
+//hospital application 
+
+
 // Export the app
 export { app };
